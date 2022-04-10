@@ -142,3 +142,7 @@ def changeprofile(request):
 
         else:
             return HttpResponseRedirect('/')
+
+#change password
+def chanfge_use_password(request):
+    return render(request, "add.html")
