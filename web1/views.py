@@ -22,11 +22,6 @@ def home(request):
 def about_us(request):
     return render(request, 'about_us.html',)
 
-
-
-
-
-
 #Contact Us
 def contact_us(request):
     return render(request, 'contact_us.html')
