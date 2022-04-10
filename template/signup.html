@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-9 mt-3">
+        {% if messages %}
+        {% for msg in messages %}
+        <p class="success"> {{msg}}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="col-6 offset-2 mt-5">
+            
+        <div class="form-group">
+
+            <form action="" method="post" novalidate>
+                {% csrf_token %}
+                {% for fm in form %}
+                {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}<br><br>
+                {% endfor %}
+                <input type="submit" class="btn btn-primary"> <br><br>
+                
+                
+                
+                
+                
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

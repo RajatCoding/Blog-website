@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col8 offset-1 mt-5" id="">
+        <h3>HOME</h3>
+    </div>
+</div>
+{% for posts in post %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container mt-5" id="jmb-home">
+            <h2> {{name}}</h2>
+            <h1 class="display-4" id="h1">{{posts.title}}</h1>
+            <p class="lead">{{posts.desc}}</p>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock content %}

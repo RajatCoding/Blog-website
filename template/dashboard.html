@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block messages %}
+{% if messages %}
+{%for msg in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button><strong>{{msg}}</strong>   
+  </div>
+{% endfor %}
+{% endif %}
+{% endblock messages %}
+
+
+
+
+{% block content %}
+<div class="col-10 mx-5">
+
+    <h3 class="text-white my-5 "> Dashboard Page</h3>
+    <a href="{% url 'addpost' %}" class="btn btn-success">Add Post</a>
+    <h4 class="text-center alert alert-info my-3"> Show Post Information</h4>
+    {% if post %}
+
+
+    <table class="table  table-hover bg-white">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 2%;">ID</th>
+                <th scope="col" style="width: 28%;">TITLE</th>
+                <th scope="col" style="width: 55%;">DESCRIPTION</th>
+                <th scope="col" style="width: 15%;">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for po in post %}
+            <tr>
+                <th scope="row" class="font-weight bold">{{po.id}}</th>
+                <td scope="row" class="font-weight bold">{{po.title}}</td>
+                <td scope="row" class="font-weight bold">{{po.desc}}</td>
+                <td scope="row"><a href="{% url 'updatepost' po.id %}" class="btn btn-warning">Edit</a>
+                    <form action="{% url 'delete' po.id %}" method="" class="d-inline"><input type="submit"
+                            class="btn btn-danger" value="Delete"></form>
+
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    {% else %}
+    <h1>No Record Found</h1>
+    {% endif %}
+    {% endblock content %}
+</div>
+
+{% block side %}
+<div class="col-1 mt-5">
+<div class="row">
+<div class="col-11 offset-1 mt-5">
+
+    <h2>Welcome</h2>
+        <h3 class='mx-3'> {{name}}</h3>
+    <div class="col-12 mt-5">
+
+        <a href="{% url 'changeprofile' %}" class="alert-dark alert-link " id="dash-edit-profile">Edit Profile</a>
+    </div>
+</div>
+</div>
+</div>
+    {% endblock side %}

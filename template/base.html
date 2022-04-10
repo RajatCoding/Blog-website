@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Am Blogs</title>
+    <link rel="stylesheet" href="{% static '../static/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '../static/css/home.css' %}">
+    <script src="{% static '../static/javascript/bootstrap.min.js/' %}"></script>
+    <script src="{% static '../static/javascript/jquery.js/' %}"> </script>
+    <script src="{% static '../static/javascript/popper.js/' %}"> </script>
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col-4 mx-auto">
+                <h1>Welcome to Crispy Blogs</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="row p-8">
+            {% include 'navbar.html' %}
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            {% block messages %}
+            {% endblock messages %}
+        </div>
+    </div>
+
+    <div class="row justify-content-around">
+        {% block side %}
+        {% endblock side %}
+
+        {% block content %}
+        {% endblock content %}
+
+    </div>
+
+
+
+
+
+</body>
+
+
+
+</html>

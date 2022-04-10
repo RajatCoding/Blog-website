@@ -1,0 +1,48 @@
+ body{
+color: whitesmoke;
+background-color:rgb(70, 65, 65); 
+ }
+
+
+
+
+ul{
+
+    list-style: none;
+}
+li{
+
+    display: inline-block;
+    padding: 5px;
+}
+#nav-red{
+ border-color: green;
+}
+
+#jmb-home{
+
+    border: 1px solid white;
+    margin-bottom: 5%;
+    
+}
+#h1{
+
+    font-weight: bold;
+}
+
+
+th,td{
+
+border: 2px solid black;
+
+}
+lead{
+margin-bottom: 5%;
+
+}
+a:hover{
+
+    color: red;
+
+}
+
